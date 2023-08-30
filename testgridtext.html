@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid of Squares</title>
+    <style>
+        /* Center the grid */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 2px;
+            background-color: white;
+            border: 1px solid black;
+            position: relative;
+        }
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+        }
+        /* Add diagonal line */
+        .grid:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% - 1px); /* Adjust for border */
+            height: calc(100% - 1px); /* Adjust for border */
+            background-color: transparent;
+            border: 2px solid red; /* Line color */
+            z-index: -1; /* Place behind cells */
+            clip-path: polygon(0 0, 100% 0, 0% 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <!-- Replace the content of each cell with your data -->
+        <div class="cell">A</div>
+        <div class="cell">K</div>
+        <div class="cell">U</div>
+        <!-- ... Add the rest of the cells ... -->
+        <div class="cell">Z</div>
+        <div class="cell">J</div>
+    </div>
+</body>
+</html>

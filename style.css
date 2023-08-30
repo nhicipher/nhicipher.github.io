@@ -1,0 +1,87 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+	padding-bottom: 50px;
+}
+
+header {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content img {
+    max-width: 100px;
+    height: auto;
+}
+
+.padded-paragraph {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.padded-heading {
+    padding-left: 50px;
+	padding-right: 50px;
+}
+
+.image-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-top: 1px solid black;
+    padding: 10px 0;
+}
+
+.nav-list li {
+    margin: 0 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    transition: background-color 0.0s, color 0.0s;
+}
+
+.nav-list a:hover {
+    background-color: black;
+    color: white;
+}
+
+.image-container {
+	margin: 0 auto;
+    display: flex;
+	max-width: 1200px; /* Set the maximum width of the container */
+}
+
+.image-container figure {
+	justify-content: center;
+    align-items: center;
+	margin-right: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.center-text {
+    text-align: center;
+}
+

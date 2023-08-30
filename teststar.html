@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ 
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1000" height="1000"></canvas>
+
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+
+  var centerX = canvas.width / 2;
+  var centerY = canvas.height / 2;
+  var radius = 400;
+  var numLines = 26;
+
+  for (var i = 0; i < numLines; i++) {
+    var angleA = (i / numLines) * 2 * Math.PI;
+    var angleB = ((i - 11) / numLines) * 2 * Math.PI;
+
+    var x1A = centerX + radius * Math.cos(angleA);
+    var y1A = centerY + radius * Math.sin(angleA);
+    var x2A = centerX + radius * Math.cos(angleB);
+    var y2A = centerY + radius * Math.sin(angleB);
+
+    ctx.beginPath();
+    ctx.moveTo(x1A, y1A);
+    ctx.lineTo(x2A, y2A);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+</script>
+
+</body>
+</html>

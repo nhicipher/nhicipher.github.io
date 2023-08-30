@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid of Squares</title>
+	
+	<style>
+        /* Center the canvas */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #gridCanvas {
+            border: 1px solid black;
+        }
+    </style>
+	
+</head>
+<body>
+
+
+
+
+    <canvas id="gridCanvas" width="400" height="500"></canvas>
+	
+
+
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('gridCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Define the data
+        const data = [
+            ['A', 'K', 'U', 'E', 'O', 'Y', 'I', 'S'],
+            ['B', 'L', 'V', 'F', 'P', 'Z', 'J', 'T'],
+            ['C', 'M', 'W', 'G', 'Q', 'A', 'K', 'U'],
+            ['D', 'N', 'X', 'H', 'R', 'B', 'L', 'V'],
+            ['E', 'O', 'Y', 'I', 'S', 'C', 'M', 'W'],
+            ['F', 'P', 'Z', 'J', 'T', 'D', 'N', 'X'],
+            ['G', 'Q', 'A', 'K', 'U', 'E', 'O', 'Y'],
+            ['H', 'R', 'B', 'L', 'V', 'F', 'P', 'Z'],
+            ['I', 'S', 'C', 'M', 'W', 'G', 'Q', 'A'],
+            ['J', 'T', 'D', 'N', 'X', 'H', 'R', 'B']
+        ];
+
+        // Calculate cell size and font size based on canvas size
+        const cellSize = canvas.width / 8;
+        const fontSize = cellSize * 0.5;
+
+        // Set font properties
+        ctx.font = `${fontSize}px Arial`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        // Plot the grid of squares and draw the diagonal line
+        for (let y = 0; y < 10; y++) {
+            for (let x = 0; x < 8; x++) {
+                // Draw square
+                ctx.fillStyle = 'white';
+                ctx.strokeStyle = 'black';
+                ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+                ctx.strokeRect(x * cellSize, y * cellSize, cellSize, cellSize);
+
+                // Draw text
+                ctx.fillStyle = 'black';
+                ctx.fillText(data[y][x], x * cellSize + cellSize / 2, y * cellSize + cellSize / 2);
+            }
+        }
+
+        // Draw diagonal line
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(8 * cellSize, 8 * cellSize);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Draw additional diagonal line
+        ctx.beginPath();
+        ctx.moveTo(1 * cellSize, 0);
+        ctx.lineTo(8 * cellSize, 7 * cellSize);
+        ctx.strokeStyle = 'black'; // Change color if desired
+        ctx.stroke();
+
+// Draw additional diagonal line
+        ctx.beginPath();
+        ctx.moveTo(2 * cellSize, 0);
+        ctx.lineTo(8 * cellSize, 6 * cellSize);
+        ctx.strokeStyle = 'black'; // Change color if desired
+        ctx.stroke();
+		
+		ctx.beginPath();
+        ctx.moveTo(3 * cellSize, 0);
+        ctx.lineTo(8 * cellSize, 5 * cellSize);
+        ctx.strokeStyle = 'black'; // Change color if desired
+        ctx.stroke();
+
+       // I to T
+        ctx.beginPath();
+        ctx.moveTo(0 * cellSize, 8 * cellSize);
+        ctx.lineTo(2 * cellSize, 10 * cellSize);
+        ctx.strokeStyle = 'black'; // Change color if desired
+        ctx.stroke();
+		
+		//J
+		ctx.beginPath();
+        ctx.moveTo(0 * cellSize, 9 * cellSize);
+        ctx.lineTo(1 * cellSize, 10 * cellSize);
+        ctx.strokeStyle = 'black'; // Change color if desired
+        ctx.stroke();
+
+    </script>
+</body>
+</html>
