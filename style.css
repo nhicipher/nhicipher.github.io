@@ -65,6 +65,19 @@ header {
     color: white;
 }
 
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .nav-list li {
+        margin: 10px 0; /* Add vertical spacing between items */
+    }
+}
+
+
 .image-container {
 	margin: 0 auto;
     display: flex;
